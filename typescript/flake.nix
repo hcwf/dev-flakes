@@ -17,6 +17,6 @@
             typescript-language-server
           ];
         };
-      }
-    }
+      };
+    };
 }
