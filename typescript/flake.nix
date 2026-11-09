@@ -1,7 +1,9 @@
 {
+  description = "A dev flake for use with TypeScript.";
+
   inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs = { flake-parts, ... }@inputs: let
@@ -12,7 +14,7 @@
       
       perSystem = { self', inputs', pkgs, ... }: {
         devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
+          nativeBuildInputs = with pkgs; [
             typescript
             typescript-language-server
           ];
