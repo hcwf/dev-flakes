@@ -15,6 +15,7 @@
       perSystem = { self', inputs', pkgs, ... }: {
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
+            nodejs
             typescript
             typescript-language-server
           ];
